@@ -6,16 +6,15 @@ const main = (lat, long, radius) => {
     // const placeDetails = getPlaceDetails('ChIJAYUkrl9JHRUR4T7fwer8ARU');
     // console.log(placeDetails);
     const response = getPlaceData(lat, long, radius);
-    handleDataResponse(response);
+    handleDataResponse(lat, long, radius, response);
 }
 
 let temp_page_count = 0;
-const handleDataResponse = (response) => {
+const handleDataResponse = (lat, long, radius, response) => {
     const nextPage = response.next_page_token;
     const results = response.results;
     if (nextPage && temp_page_count<=2) {
         temp_page_count++;
-        console.log('Go Get the next page');
         handleDataResponse(getNextPage(nextPage));
     }
 

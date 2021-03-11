@@ -1,5 +1,3 @@
-// general search
-const placeSearchURLuel = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyC0-UhEcfoNGoXSwnIXzJw-j1z9q8s2E4M"
 const key = process.env.GOOGLE_API_KEY;
 
 // supported place types
